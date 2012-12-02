@@ -52,5 +52,6 @@
                 <Grid />
             </TabItem>
         </TabControl>
+        <Button Content="Test" Height="34" HorizontalAlignment="Left" Margin="279,4,0,0" Name="button3" VerticalAlignment="Top" Width="102" Click="button3_Click" />
     </Grid>
 </Window>

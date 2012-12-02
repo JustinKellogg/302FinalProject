@@ -9,12 +9,10 @@ namespace _302FinalProject
     {
         internal void addUser(Person User)
         {
-            throw new NotImplementedException();
         }
 
         internal void removeUser(Person User)
         {
-            throw new NotImplementedException();
         }
     }
 }

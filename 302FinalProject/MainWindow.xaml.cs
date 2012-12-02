@@ -55,5 +55,10 @@ namespace _302FinalProject
 
         }
 
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            Test tester = new Test();
+        }
+
     }
 }
