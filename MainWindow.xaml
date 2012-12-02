@@ -1,0 +1,56 @@
+﻿<Window x:Class="_302FinalProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Address Book" Height="373" Width="761" Background="#FFD8E5FF" >
+      <Grid>
+        <Grid.ContextMenu>
+            <ContextMenu />
+        </Grid.ContextMenu>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46*" />
+            <RowDefinition Height="288*" />
+        </Grid.RowDefinitions>
+        <Button Content="Add Contanct" Height="30" Name="AddPerson" Margin="488,4,151,12" Click="AddPerson_Click" />
+        <Button Content="Remove Contanct" Height="30" Name="RemovePerson" Margin="0,4,27,12" Click="RemovePerson_Click" HorizontalAlignment="Right" Width="118" />
+        <GroupBox Grid.Row="1" Header="People" Height="283" HorizontalAlignment="Left" Margin="12,10,0,0" Name="groupBox1" VerticalAlignment="Top" Width="194">
+            <Grid>
+                <ListView Height="248" HorizontalAlignment="Left" Margin="6,6,0,0" Name="listView1" VerticalAlignment="Top" Width="170" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Header="Information" Height="271" HorizontalAlignment="Left" Margin="212,16,0,0" Name="groupBox2" VerticalAlignment="Top" Width="500">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Name" Height="28" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" Width="89" />
+                <TextBox Height="26" Grid.Column="1" AcceptsReturn="True" HorizontalAlignment="Left" Name="inputText" VerticalAlignment="Top" Text="Enter Data here" Width="319" />
+                <Label Content="Email Addresss" Grid.Row="1" Grid.Column="0" Height="28" HorizontalAlignment="Left" Name="label2" VerticalAlignment="Top" />
+                <TextBox AcceptsReturn="True" Grid.Row="1" Grid.Column="1" Height="26" HorizontalAlignment="Left" Name="textBox1" Text="Enter Data here" VerticalAlignment="Top" Width="319" />
+                <Label Content="Street Address" Grid.Row="2" Grid.Column="0" Height="28" HorizontalAlignment="Left" Name="label3" VerticalAlignment="Top" Width="89" />
+                <TextBox AcceptsReturn="True" Grid.Row="2" Grid.Column="1" Height="26" HorizontalAlignment="Left" Name="textBox2" Text="Enter Data here" VerticalAlignment="Top" Width="319" />
+                <Label Content="State" Height="28" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" Name="label4" VerticalAlignment="Top" Width="89" />
+                <TextBox AcceptsReturn="True" Grid.Row="3" Grid.Column="1" Height="26" HorizontalAlignment="Left" Name="textBox3" Text="Enter Data here" VerticalAlignment="Top" Width="319" />
+                <Label Content="Zip" Grid.Row="4" Grid.Column="0" Height="28" HorizontalAlignment="Left" Name="label5" VerticalAlignment="Top" Width="89" />
+                <TextBox AcceptsReturn="True" Grid.Row="4" Grid.Column="1" Height="26" HorizontalAlignment="Left" Name="textBox4" Text="Enter Data here" VerticalAlignment="Top" Width="319" />
+                <Label Content="Phone Number" Grid.Row="5" Grid.Column="0" Height="28" HorizontalAlignment="Left" Name="label6" VerticalAlignment="Top" Width="111" />
+                <TextBox AcceptsReturn="True" Grid.Row="5" Grid.Column="1" Height="26" HorizontalAlignment="Left" Name="textBox5" Text="Enter Data here" VerticalAlignment="Top" Width="319" />
+            </Grid>
+        </GroupBox>
+        <Button Content="Save Changes" Height="30" HorizontalAlignment="Left" Margin="0,4,0,0" Name="button1" VerticalAlignment="Top" Width="89" />
+        <Button Content="Load Book" Height="30" HorizontalAlignment="Left" Margin="95,4,0,0" Name="button2" VerticalAlignment="Top" Width="89" />
+        <TabControl Grid.RowSpan="2" Height="100" HorizontalAlignment="Left" Margin="778,17,0,0" Name="tabControl1" VerticalAlignment="Top" Width="200">
+            <TabItem Header="tabItem1" Name="tabItem1">
+                <Grid />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
