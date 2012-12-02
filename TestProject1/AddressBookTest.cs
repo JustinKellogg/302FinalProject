@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace TestProject1
 {      
@@ -67,8 +68,10 @@ namespace TestProject1
         [TestMethod()]
         public void AddressBookConstructorTest()
         {
+            List<int> test = new List<int>(); 
+            
             AddressBook target = new AddressBook();
-            Assert.Inconclusive("TODO: Implement code to verify target");
+            Assert.AreEqual(target.Users.Count,0);
         }
 
         /// <summary>
@@ -78,9 +81,23 @@ namespace TestProject1
         public void addUserTest()
         {
             AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value
-            Person User = null; // TODO: Initialize to an appropriate value
+            string n = "John";
+            string ad = "101 1st Street";
+            string s = "MO";
+            string z = "123456";
+            string nu = "123-4567";
+            Person User = new Person(n, ad, s, z, nu);           
+            
             target.addUser(User);
-            Assert.Inconclusive("A method that does not return a value cannot be verified.");
+            Assert.IsTrue(target.Users.Contains(User));
+            Assert.AreEqual(target.Users.Count, 1);
+            Assert.AreEqual(target.Users[0].name, n);
+            Assert.AreEqual(target.Users[0].addr, ad);
+            Assert.AreEqual(target.Users[0].state, s);
+            Assert.AreEqual(target.Users[0].zip, z);
+            Assert.AreEqual(target.Users[0].num, nu);
+            target.addUser(User);
+            Assert.AreEqual(target.Users.Count, 2);
         }
 
         /// <summary>
@@ -90,9 +107,16 @@ namespace TestProject1
         public void removeUserTest()
         {
             AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value
-            Person User = null; // TODO: Initialize to an appropriate value
+            string n = "John";
+            string ad = "101 1st Street";
+            string s = "MO";
+            string z = "123456";
+            string nu = "123-4567";
+            Person User = new Person(n, ad, s, z, nu);
+
             target.removeUser(User);
-            Assert.Inconclusive("A method that does not return a value cannot be verified.");
+            Assert.AreEqual(target.Users.Count, 0);
+            Assert.IsFalse(target.Users.Contains(User));
         }
     }
 }
