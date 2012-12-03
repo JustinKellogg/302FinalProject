@@ -55,23 +55,34 @@ namespace _302FinalProject
 
         private void RemovePerson_Click(object sender, RoutedEventArgs e)
         {
-            this.inputText.Text = "hope this works";
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-
+            if (book.Users.Count()>0 && listView1.SelectedIndex>=0)
+            {
+                book.Users.RemoveAt(listView1.SelectedIndex);
+                Users.RemoveAt(listView1.SelectedIndex);
+                listView1.Items.Clear();
+                foreach (Person User in book.Users)
+                {
+                    listView1.Items.Add(User.name);
+                }
+            }
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            textBox6.Text = "";
-            textBox6.Text = listView1.SelectedValue.ToString() + listView1.SelectedIndex.ToString();
+            if (book.Users.Count() > 0 && listView1.SelectedIndex >=0)
+            {
+                string newName = inputText.Text;
+                string newAddr = textBox2.Text;
+                string newSt = textBox3.Text;
+                string newZip = textBox4.Text;
+                string newNum = textBox5.Text;
+                book.editUser(book.Users[listView1.SelectedIndex], newName, newAddr, newSt, newZip, newNum);
+                inputText.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+            }
         }
 
         private void button2_Click_1(object sender, RoutedEventArgs e)
@@ -94,6 +105,18 @@ namespace _302FinalProject
             {
                 listView1.Items.Add(User.name+"          "+User.zip);
             }            
+        }
+
+        private void listView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (book.Users.Count() > 0 && listView1.SelectedIndex >= 0)
+            {
+                inputText.Text = book.Users[listView1.SelectedIndex].name;
+                textBox2.Text = book.Users[listView1.SelectedIndex].addr;
+                textBox3.Text = book.Users[listView1.SelectedIndex].state;
+                textBox4.Text = book.Users[listView1.SelectedIndex].zip;
+                textBox5.Text = book.Users[listView1.SelectedIndex].num;
+            }
         }
     }
 }

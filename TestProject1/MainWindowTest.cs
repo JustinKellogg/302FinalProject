@@ -131,34 +131,6 @@ namespace TestProject1
         }
 
         /// <summary>
-        ///A test for button1_Click
-        ///</summary>
-        [TestMethod()]
-        [DeploymentItem("302FinalProject.exe")]
-        public void button1_ClickTest()
-        {
-            MainWindow_Accessor target = new MainWindow_Accessor(); // TODO: Initialize to an appropriate value
-            object sender = null; // TODO: Initialize to an appropriate value
-            RoutedEventArgs e = null; // TODO: Initialize to an appropriate value
-            target.button1_Click(sender, e);
-            //Assert.Inconclusive("A method that does not return a value cannot be verified.");
-        }
-
-        /// <summary>
-        ///A test for button2_Click
-        ///</summary>
-        [TestMethod()]
-        [DeploymentItem("302FinalProject.exe")]
-        public void button2_ClickTest()
-        {
-            MainWindow_Accessor target = new MainWindow_Accessor(); // TODO: Initialize to an appropriate value
-            object sender = null; // TODO: Initialize to an appropriate value
-            RoutedEventArgs e = null; // TODO: Initialize to an appropriate value
-            //target.button2_Click(sender, e);
-            //Assert.Inconclusive("A method that does not return a value cannot be verified.");
-        }
-
-        /// <summary>
         ///A test for button3_Click
         ///</summary>
         [TestMethod()]

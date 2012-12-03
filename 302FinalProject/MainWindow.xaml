@@ -14,7 +14,7 @@
         <Button Content="Remove Contanct" Height="30" Name="RemovePerson" Margin="0,5,32,11" Click="RemovePerson_Click" HorizontalAlignment="Right" Width="118" />
         <GroupBox Grid.Row="1" Header="People" Height="283" HorizontalAlignment="Left" Margin="12,10,0,0" Name="groupBox1" VerticalAlignment="Top" Width="194">
             <Grid>
-                <ListView Height="248" HorizontalAlignment="Left" Margin="6,6,0,0" Name="listView1" VerticalAlignment="Top" Width="170"  />
+                <ListView Height="248" HorizontalAlignment="Left" Margin="6,6,0,0" Name="listView1" VerticalAlignment="Top" Width="170" SelectionChanged="listView1_SelectionChanged" />
             </Grid>
         </GroupBox>
         <GroupBox Grid.Row="1" Header="Information" Height="271" HorizontalAlignment="Left" Margin="212,16,0,0" Name="groupBox2" VerticalAlignment="Top" Width="500">
