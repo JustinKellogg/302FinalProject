@@ -10,7 +10,7 @@ namespace _302FinalProject
         public string name,addr,state,zip,num;
         public Person(string n, string ad, string s, string z, string nu)
         {
-            name = n;
+            name = n;///
             addr = ad;
             state = s;
             zip = z;
