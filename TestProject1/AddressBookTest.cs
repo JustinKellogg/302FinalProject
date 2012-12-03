@@ -71,6 +71,7 @@ namespace TestProject1
             List<int> test = new List<int>(); 
             
             AddressBook target = new AddressBook();
+            Assert.IsNotNull(target);
             Assert.AreEqual(target.Users.Count,0);
         }
 
@@ -87,7 +88,7 @@ namespace TestProject1
             string z = "123456";
             string nu = "123-4567";
             Person User = new Person(n, ad, s, z, nu);           
-            /////
+
             target.addUser(User);
             Assert.IsTrue(target.Users.Contains(User));
             Assert.AreEqual(target.Users.Count, 1);
@@ -98,7 +99,7 @@ namespace TestProject1
             Assert.AreEqual(target.Users[0].num, nu);
             target.addUser(User);
             Assert.AreEqual(target.Users.Count, 2);
-            ////
+
         }
         ///<summary>
         ///A test for editUser
@@ -143,7 +144,10 @@ namespace TestProject1
             string z = "123456";
             string nu = "123-4567";
             Person User = new Person(n, ad, s, z, nu);
+            target.addUser(User);
 
+            Assert.AreEqual(target.Users.Count, 1);
+            Assert.IsTrue(target.Users.Contains(User));
             target.removeUser(User);
             Assert.AreEqual(target.Users.Count, 0);
             Assert.IsFalse(target.Users.Contains(User));
@@ -155,9 +159,28 @@ namespace TestProject1
         [TestMethod()]
         public void sortByZipTest()
         {
-            AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value
+            string n = "John";
+            string ad = "101 1st Street";
+            string s = "MO";
+            string z = "123456";
+            string nu = "123-4567";
+
+            string n2 = "Zach";
+            string ad2 = "404 2nd Street";
+            string s2 = "MN";
+            string z2 = "012345";
+            string nu2 = "321-7654";
+            Person User = new Person(n, ad, s, z, nu);
+            Person User2 = new Person(n2, ad2, s2, z2, nu2);
+            AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value        
+            target.addUser(User);
+            target.addUser(User2);
+
             target.sortByZip();
-            Assert.Inconclusive("A method that does not return a value cannot be verified.");
+            Assert.AreEqual(target.Users[0].zip, "012345");
+            Assert.AreEqual(target.Users[1].zip, "123456");
+            Assert.AreEqual(target.Users[1].name, "John");
+            Assert.AreEqual(target.Users[0].name, "Zach");
         }
 
         /// <summary>
@@ -166,9 +189,28 @@ namespace TestProject1
         [TestMethod()]
         public void sortByNameTest()
         {
-            AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value
+            string n = "John";
+            string ad = "101 1st Street";
+            string s = "MO";
+            string z = "123456";
+            string nu = "123-4567";
+
+            string n2 = "Zach";
+            string ad2 = "404 2nd Street";
+            string s2 = "MN";
+            string z2 = "012345";
+            string nu2 = "321-7654";
+            Person User = new Person(n, ad, s, z, nu);
+            Person User2 = new Person(n2, ad2, s2, z2, nu2);
+            AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value        
+            target.addUser(User2);
+            target.addUser(User);
+
             target.sortByName();
-            Assert.Inconclusive("A method that does not return a value cannot be verified.");
+            Assert.AreEqual(target.Users[0].name,"John");
+            Assert.AreEqual(target.Users[1].name,"Zach");
+            Assert.AreEqual(target.Users[1].zip,"012345");
+            Assert.AreEqual(target.Users[0].zip,"123456");
         }
     }
 }

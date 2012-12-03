@@ -163,7 +163,6 @@ namespace TestProject1
             Assert.AreEqual(target.state, s);
             Assert.AreEqual(target.zip, z);
             Assert.AreEqual(target.num, nu);
-
         }
     }
 }
