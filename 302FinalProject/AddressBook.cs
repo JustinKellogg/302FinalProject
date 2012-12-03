@@ -15,6 +15,7 @@ namespace _302FinalProject
 
         internal void removeUser(Person User)
         {
+            Users.Remove(User);
         }
         internal void sortByName()
         {
@@ -27,6 +28,11 @@ namespace _302FinalProject
     
         internal void editUser(Person User,string newN,string newAd,string newS,string newZ,string newNu)
         {
+            User.setName(newN);
+            User.setAddress(newAd);
+            User.setState(newS);
+            User.setZip(newZ);
+            User.setNumber(newNu);
         }
     }
 }
