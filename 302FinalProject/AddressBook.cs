@@ -15,5 +15,15 @@ namespace _302FinalProject
         internal void removeUser(Person User)
         {
         }
+        internal void sortByName()
+        {
+        }
+        internal void sortByZip()
+        {
+        }
+    
+        internal void editUser(Person User,string newN,string newAd,string newS,string newZ,string newNu)
+        {
+        }
     }
 }

@@ -38,6 +38,7 @@ namespace _302FinalProject
             Person newUser = new Person(name, addr, state, zip, num);
             listView1.Items.Add(newUser.name);
             Users.Add(newUser);
+            book.addUser(newUser);
         }
 
         private void RemovePerson_Click(object sender, RoutedEventArgs e)

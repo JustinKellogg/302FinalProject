@@ -100,6 +100,35 @@ namespace TestProject1
             Assert.AreEqual(target.Users.Count, 2);
             ////
         }
+        ///<summary>
+        ///A test for editUser
+        ///</summary>
+        [TestMethod()]
+        public void editUserTest()
+        {
+            AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value
+            string n = "John";
+            string ad = "101 1st Street";
+            string s = "MO";
+            string z = "123456";
+            string nu = "123-4567";
+            Person User = new Person(n, ad, s, z, nu);
+
+            string newN = "Jane";
+            string newAd = "404 2nd Street";
+            string newS = "MN";
+            string newZ = "012345";
+            string newNu = "321-7654";
+
+            target.addUser(User);
+            target.editUser(User,newN,newAd,newS,newZ,newNu);
+
+            Assert.AreEqual(target.Users[0].addr, newN);
+            Assert.AreEqual(target.Users[0].addr, newAd);
+            Assert.AreEqual(target.Users[0].addr, newS);
+            Assert.AreEqual(target.Users[0].addr, newZ);
+            Assert.AreEqual(target.Users[0].addr, newNu);
+        }
 
         /// <summary>
         ///A test for removeUser
@@ -118,6 +147,28 @@ namespace TestProject1
             target.removeUser(User);
             Assert.AreEqual(target.Users.Count, 0);
             Assert.IsFalse(target.Users.Contains(User));
+        }
+
+        /// <summary>
+        ///A test for sortByZip
+        ///</summary>
+        [TestMethod()]
+        public void sortByZipTest()
+        {
+            AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value
+            target.sortByZip();
+            Assert.Inconclusive("A method that does not return a value cannot be verified.");
+        }
+
+        /// <summary>
+        ///A test for sortByName
+        ///</summary>
+        [TestMethod()]
+        public void sortByNameTest()
+        {
+            AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value
+            target.sortByName();
+            Assert.Inconclusive("A method that does not return a value cannot be verified.");
         }
     }
 }
