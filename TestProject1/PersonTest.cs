@@ -9,7 +9,7 @@ namespace TestProject1
     ///This is a test class for PersonTest and is intended
     ///to contain all PersonTest Unit Tests
     ///</summary>
-    [TestClass()]
+    [TestClass()]////
     public class PersonTest
     {
         private TestContext testContextInstance;
