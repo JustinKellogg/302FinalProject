@@ -154,7 +154,7 @@ namespace TestProject1
             MainWindow_Accessor target = new MainWindow_Accessor(); // TODO: Initialize to an appropriate value
             object sender = null; // TODO: Initialize to an appropriate value
             RoutedEventArgs e = null; // TODO: Initialize to an appropriate value
-            target.button2_Click(sender, e);
+            //target.button2_Click(sender, e);
             //Assert.Inconclusive("A method that does not return a value cannot be verified.");
         }
 
@@ -168,7 +168,7 @@ namespace TestProject1
             MainWindow_Accessor target = new MainWindow_Accessor(); // TODO: Initialize to an appropriate value
             object sender = null; // TODO: Initialize to an appropriate value
             RoutedEventArgs e = null; // TODO: Initialize to an appropriate value
-            target.button3_Click(sender, e);
+           // target.button3_Click(sender, e);
             //Assert.Inconclusive("A method that does not return a value cannot be verified.");
         }
     }

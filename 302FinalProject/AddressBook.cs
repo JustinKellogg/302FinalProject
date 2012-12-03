@@ -10,6 +10,7 @@ namespace _302FinalProject
         public List<Person> Users = new List<Person>();
         internal void addUser(Person User)
         {
+            Users.Add(User);
         }
 
         internal void removeUser(Person User)
@@ -17,9 +18,11 @@ namespace _302FinalProject
         }
         internal void sortByName()
         {
+            Users=Users.OrderBy(x=>x.name).ToList();
         }
         internal void sortByZip()
         {
+            Users=Users.OrderBy(x=>x.zip).ToList();
         }
     
         internal void editUser(Person User,string newN,string newAd,string newS,string newZ,string newNu)

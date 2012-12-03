@@ -124,11 +124,11 @@ namespace TestProject1
             target.addUser(User);
             target.editUser(User,newN,newAd,newS,newZ,newNu);
 
-            Assert.AreEqual(target.Users[0].addr, newN);
+            Assert.AreEqual(target.Users[0].name, newN);
             Assert.AreEqual(target.Users[0].addr, newAd);
-            Assert.AreEqual(target.Users[0].addr, newS);
-            Assert.AreEqual(target.Users[0].addr, newZ);
-            Assert.AreEqual(target.Users[0].addr, newNu);
+            Assert.AreEqual(target.Users[0].state, newS);
+            Assert.AreEqual(target.Users[0].zip, newZ);
+            Assert.AreEqual(target.Users[0].num, newNu);
         }
 
         /// <summary>

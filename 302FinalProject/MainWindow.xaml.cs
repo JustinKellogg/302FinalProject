@@ -30,15 +30,27 @@ namespace _302FinalProject
 
         private void AddPerson_Click(object sender, RoutedEventArgs e)
         {
+            listView1.Items.Clear();
             string name = inputText.Text;
             string addr = textBox2.Text;
             string state = textBox3.Text;
             string zip = textBox4.Text;
             string num = textBox5.Text;
-            Person newUser = new Person(name, addr, state, zip, num);
-            listView1.Items.Add(newUser.name);
-            Users.Add(newUser);
+            Person newUser = new Person(name, addr, state, zip, num); 
+            
+            Users.Add(newUser); 
             book.addUser(newUser);
+           foreach (Person User in book.Users)
+            {
+                listView1.Items.Add(User.name);
+            }
+
+           
+            inputText.Text="";
+            textBox2.Text="";
+            textBox3.Text="";
+            textBox4.Text="";
+            textBox5.Text="";
         }
 
         private void RemovePerson_Click(object sender, RoutedEventArgs e)
@@ -58,8 +70,30 @@ namespace _302FinalProject
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            Test tester = new Test();
+            textBox6.Text = "";
+            textBox6.Text = listView1.SelectedValue.ToString() + listView1.SelectedIndex.ToString();
         }
 
+        private void button2_Click_1(object sender, RoutedEventArgs e)
+        {
+            listView1.Items.Clear();
+            List<Person> temp = new List<Person>(book.Users);
+            
+            foreach (Person User in temp.OrderBy(x=>x.name).ToList())
+            {
+                listView1.Items.Add(User.name);
+            }
+        }
+
+        private void button1_Click_1(object sender, RoutedEventArgs e)
+        {
+            listView1.Items.Clear();
+            List<Person> temp = new List<Person>(book.Users);
+            
+            foreach (Person User in temp.OrderBy(x=>x.zip).ToList())
+            {
+                listView1.Items.Add(User.name+"          "+User.zip);
+            }            
+        }
     }
 }
