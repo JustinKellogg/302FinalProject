@@ -74,8 +74,8 @@ namespace TestProject1
             string nu = "123-4567";
             Person target = new Person(n, ad, s, z, nu); // TODO: Initialize to an appropriate value
             string p = "43224";
-            target.SetZip(p);
-            Assert.AreEqual(target.zip, p);
+            target.Zip = p; 
+            Assert.AreEqual(target.Zip, p);
         }
 
         /// <summary>
@@ -89,10 +89,10 @@ namespace TestProject1
             string s = "MO";
             string z = "123456";
             string nu = "123-4567";
-            Person target = new Person(n, ad, s, z, nu); // TODO: Initialize to an appropriate value
+            Person target = new Person(n, ad, s, z, nu); 
             string p = "VA";
-            target.SetState(p);
-            Assert.AreEqual(target.state, p);
+            target.State = p;
+            Assert.AreEqual(target.State, p);
         }
 
         /// <summary>
@@ -106,10 +106,10 @@ namespace TestProject1
             string s = "MO";
             string z = "123456";
             string nu = "123-4567";
-            Person target = new Person(n, ad, s, z, nu); // TODO: Initialize to an appropriate value
+            Person target = new Person(n, ad, s, z, nu); 
             string p = "987-6543";
-            target.SetNumber(p);
-            Assert.AreEqual(target.num, p);
+            target.Num = p;
+            Assert.AreEqual(target.Num, p);
         }
 
         /// <summary>
@@ -125,8 +125,8 @@ namespace TestProject1
             string nu = "123-4567";
             Person target = new Person(n, ad, s, z, nu); // TODO: Initialize to an appropriate value
             string p = "Jonathon Doe";// TODO: Initialize to an appropriate value
-            target.SetName(p);
-            Assert.AreEqual(target.name,p);
+            target.Name = p;
+            Assert.AreEqual(target.Name,p);
         }
 
         /// <summary>
@@ -142,8 +142,8 @@ namespace TestProject1
             string nu = "123-4567";
             Person target = new Person(n, ad, s, z, nu); // TODO: Initialize to an appropriate value
             string p = "404 Not Found Blvd";// TODO: Initialize to an appropriate value
-            target.SetAddress(p);
-            Assert.AreEqual(target.addr,p);
+            target.Addr = p;
+            Assert.AreEqual(target.Addr,p);
         }
 
         /// <summary>
@@ -158,11 +158,11 @@ namespace TestProject1
             string z = "123456";
             string nu = "123-4567";
             Person target = new Person(n, ad, s, z, nu);
-            Assert.AreEqual(target.name, n);
-            Assert.AreEqual(target.addr, ad);
-            Assert.AreEqual(target.state, s);
-            Assert.AreEqual(target.zip, z);
-            Assert.AreEqual(target.num, nu);
+            Assert.AreEqual(target.Name, n);
+            Assert.AreEqual(target.Addr, ad);
+            Assert.AreEqual(target.State, s);
+            Assert.AreEqual(target.Zip, z);
+            Assert.AreEqual(target.Num, nu);
         }
     }
 }

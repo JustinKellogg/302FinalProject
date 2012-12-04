@@ -92,11 +92,11 @@ namespace TestProject1
             target.AddUser(User);
             Assert.IsTrue(target.Users.Contains(User));
             Assert.AreEqual(target.Users.Count, 1);
-            Assert.AreEqual(target.Users[0].name, n);
-            Assert.AreEqual(target.Users[0].addr, ad);
-            Assert.AreEqual(target.Users[0].state, s);
-            Assert.AreEqual(target.Users[0].zip, z);
-            Assert.AreEqual(target.Users[0].num, nu);
+            Assert.AreEqual(target.Users[0].Name, n);
+            Assert.AreEqual(target.Users[0].Addr, ad);
+            Assert.AreEqual(target.Users[0].State, s);
+            Assert.AreEqual(target.Users[0].Zip, z);
+            Assert.AreEqual(target.Users[0].Num, nu);
             target.AddUser(User);
             Assert.AreEqual(target.Users.Count, 2);
 
@@ -124,11 +124,11 @@ namespace TestProject1
             target.AddUser(User);
             target.EditUser(User,newN,newAd,newS,newZ,newNu);
 
-            Assert.AreEqual(target.Users[0].name, newN);
-            Assert.AreEqual(target.Users[0].addr, newAd);
-            Assert.AreEqual(target.Users[0].state, newS);
-            Assert.AreEqual(target.Users[0].zip, newZ);
-            Assert.AreEqual(target.Users[0].num, newNu);
+            Assert.AreEqual(target.Users[0].Name, newN);
+            Assert.AreEqual(target.Users[0].Addr, newAd);
+            Assert.AreEqual(target.Users[0].State, newS);
+            Assert.AreEqual(target.Users[0].Zip, newZ);
+            Assert.AreEqual(target.Users[0].Num, newNu);
         }
 
         /// <summary>
@@ -177,10 +177,10 @@ namespace TestProject1
             target.AddUser(User2);
 
             target.SortByZip();
-            Assert.AreEqual(target.Users[0].zip, "012345");
-            Assert.AreEqual(target.Users[1].zip, "123456");
-            Assert.AreEqual(target.Users[1].name, "John");
-            Assert.AreEqual(target.Users[0].name, "Zach");
+            Assert.AreEqual(target.Users[0].Zip, "012345");
+            Assert.AreEqual(target.Users[1].Zip, "123456");
+            Assert.AreEqual(target.Users[1].Name, "John");
+            Assert.AreEqual(target.Users[0].Name, "Zach");
         }
 
         /// <summary>
@@ -207,10 +207,10 @@ namespace TestProject1
             target.AddUser(User);
 
             target.SortByName();
-            Assert.AreEqual(target.Users[0].name,"John");
-            Assert.AreEqual(target.Users[1].name,"Zach");
-            Assert.AreEqual(target.Users[1].zip,"012345");
-            Assert.AreEqual(target.Users[0].zip,"123456");
+            Assert.AreEqual(target.Users[0].Name,"John");
+            Assert.AreEqual(target.Users[1].Name,"Zach");
+            Assert.AreEqual(target.Users[1].Zip,"012345");
+            Assert.AreEqual(target.Users[0].Zip,"123456");
         }
     }
 }

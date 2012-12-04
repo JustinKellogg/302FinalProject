@@ -20,7 +20,6 @@ namespace _302FinalProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Person> Users = new List<Person>();
         AddressBook book = new AddressBook();
         Person User = new Person("Jane Doe", "001 Main Street", "MO", "11111", "456-7890");
 
@@ -41,11 +40,10 @@ namespace _302FinalProject
             string num = textBox5.Text;
             Person newUser = new Person(name, addr, state, zip, num); 
             
-            Users.Add(newUser); 
             book.AddUser(newUser);
-           foreach (Person User in book.Users)
+            foreach (Person User in book.Users)
             {
-                listView1.Items.Add(User.name);
+                listView1.Items.Add(User.Name);
             }
            
             inputText.Text="";
@@ -61,11 +59,10 @@ namespace _302FinalProject
             if (book.Users.Count()>0 && listView1.SelectedIndex>=0)
             {
                 book.Users.RemoveAt(listView1.SelectedIndex);
-                Users.RemoveAt(listView1.SelectedIndex);
                 listView1.Items.Clear();
                 foreach (Person User in book.Users)
                 {
-                    listView1.Items.Add(User.name);
+                    listView1.Items.Add(User.Name);
                 }
             }
         }
@@ -94,11 +91,10 @@ namespace _302FinalProject
         private void Button2Click1(object sender, RoutedEventArgs e)
         {
             listView1.Items.Clear();
-            List<Person> temp = new List<Person>(book.Users);
             book.SortByName();
-            foreach (Person User in temp.OrderBy(x=>x.name).ToList())
+            foreach (Person User in book.Users)
             {
-                listView1.Items.Add(User.name);
+                listView1.Items.Add(User.Name);
             }
         }
 
@@ -107,11 +103,10 @@ namespace _302FinalProject
         private void Button1Click1(object sender, RoutedEventArgs e)
         {
             listView1.Items.Clear();
-            List<Person> temp = new List<Person>(book.Users);
             book.SortByZip();
-            foreach (Person User in temp.OrderBy(x=>x.zip).ToList())
+            foreach (Person User in book.Users)
             {
-                listView1.Items.Add(User.name+"          "+User.zip);
+                listView1.Items.Add(User.Name+"          "+User.Zip);
             }            
         }
 
@@ -120,11 +115,11 @@ namespace _302FinalProject
         {
             if (book.Users.Count() > 0 && listView1.SelectedIndex >= 0)
             {
-                inputText.Text = book.Users[listView1.SelectedIndex].name;
-                textBox2.Text = book.Users[listView1.SelectedIndex].addr;
-                textBox3.Text = book.Users[listView1.SelectedIndex].state;
-                textBox4.Text = book.Users[listView1.SelectedIndex].zip;
-                textBox5.Text = book.Users[listView1.SelectedIndex].num;
+                inputText.Text = book.Users[listView1.SelectedIndex].Name;
+                textBox2.Text = book.Users[listView1.SelectedIndex].Addr;
+                textBox3.Text = book.Users[listView1.SelectedIndex].State;
+                textBox4.Text = book.Users[listView1.SelectedIndex].Zip;
+                textBox5.Text = book.Users[listView1.SelectedIndex].Num;
             }
         }
     }

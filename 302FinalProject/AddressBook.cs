@@ -29,23 +29,23 @@ namespace _302FinalProject
         //Sorts the list of users by each user's name. 
         public void SortByName()
         {
-            Users=Users.OrderBy(x=>x.name).ToList();
+            Users=Users.OrderBy(x=>x.Name).ToList();
         }
 
         //Sorts the list of users by each user's zip code. 
         public void SortByZip()
         {
-            Users=Users.OrderBy(x=>x.zip).ToList();
+            Users=Users.OrderBy(x=>x.Zip).ToList();
         }
     
-        //Sets all of the selected user's attirbutes to new values 
+        //Sets all of the selected Person's attirbutes to new values 
         public void EditUser(Person User,string newN,string newAd,string newS,string newZ,string newNu)
         {
-            User.SetName(newN);
-            User.SetAddress(newAd);
-            User.SetState(newS);
-            User.SetZip(newZ);
-            User.SetNumber(newNu);
+            User.Name=newN;
+            User.Addr = newAd;
+            User.State = newS;
+            User.Zip = newZ;
+            User.Num = newNu;
         }
     }
 }
