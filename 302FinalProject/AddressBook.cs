@@ -14,7 +14,7 @@ namespace _302FinalProject
         {
         }
 
-        //Adds a user to the list of users
+        //Adds a user to the list of users   
         public void AddUser(Person User)
         {
             Users.Add(User);
