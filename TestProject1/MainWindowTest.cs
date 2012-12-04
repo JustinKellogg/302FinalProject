@@ -7,8 +7,7 @@ using System.Linq;
 
 namespace TestProject1
 {
-    
-    
+        
     /// <summary>
     ///This is a test class for MainWindowTest and is intended
     ///to contain all MainWindowTest Unit Tests
@@ -16,8 +15,6 @@ namespace TestProject1
     [TestClass()]
     public class MainWindowTest
     {
-
-
         private TestContext testContextInstance;
 
         /// <summary>
@@ -82,12 +79,12 @@ namespace TestProject1
         ///</summary>
         [TestMethod()]
         [DeploymentItem("302FinalProject.exe")]
-        public void AddPerson_ClickTest()
+        public void AddPersonClickTest()
         {
             MainWindow_Accessor target = new MainWindow_Accessor(); // TODO: Initialize to an appropriate value
             object sender = null; // TODO: Initialize to an appropriate value
             RoutedEventArgs e = null; // TODO: Initialize to an appropriate value
-            target.AddPerson_Click(sender, e);
+            target.AddPersonClick(sender, e);
             //Assert.Inconclusive("A method that does not return a value cannot be verified.");
         }
 
@@ -107,12 +104,12 @@ namespace TestProject1
         ///</summary>
         [TestMethod()]
         [DeploymentItem("302FinalProject.exe")]
-        public void RemovePerson_ClickTest()
+        public void RemovePersonClickTest()
         {
             MainWindow_Accessor target = new MainWindow_Accessor(); // TODO: Initialize to an appropriate value
             object sender = null; // TODO: Initialize to an appropriate value
             RoutedEventArgs e = null; // TODO: Initialize to an appropriate value
-            target.RemovePerson_Click(sender, e);
+            target.RemovePersonClick(sender, e);
             //Assert.Inconclusive("A method that does not return a value cannot be verified.");
         }
 
@@ -135,7 +132,7 @@ namespace TestProject1
         ///</summary>
         [TestMethod()]
         [DeploymentItem("302FinalProject.exe")]
-        public void button3_ClickTest()
+        public void Button3ClickTest()
         {
             MainWindow_Accessor target = new MainWindow_Accessor(); // TODO: Initialize to an appropriate value
             object sender = null; // TODO: Initialize to an appropriate value

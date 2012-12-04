@@ -62,10 +62,10 @@ namespace TestProject1
 
 
         /// <summary>
-        ///A test for setZip
+        ///A test for SetZip
         ///</summary>
         [TestMethod()]
-        public void setZipTest()
+        public void SetZipTest()
         {
             string n = "John";
             string ad = "101 1st Street";
@@ -74,15 +74,15 @@ namespace TestProject1
             string nu = "123-4567";
             Person target = new Person(n, ad, s, z, nu); // TODO: Initialize to an appropriate value
             string p = "43224";
-            target.setZip(p);
+            target.SetZip(p);
             Assert.AreEqual(target.zip, p);
         }
 
         /// <summary>
-        ///A test for setState
+        ///A test for SetState
         ///</summary>
         [TestMethod()]
-        public void setStateTest()
+        public void SetStateTest()
         {
             string n = "John";
             string ad = "101 1st Street";
@@ -91,15 +91,15 @@ namespace TestProject1
             string nu = "123-4567";
             Person target = new Person(n, ad, s, z, nu); // TODO: Initialize to an appropriate value
             string p = "VA";
-            target.setState(p);
+            target.SetState(p);
             Assert.AreEqual(target.state, p);
         }
 
         /// <summary>
-        ///A test for setNumber
+        ///A test for SetNumber
         ///</summary>
         [TestMethod()]
-        public void setNumberTest()
+        public void SetNumberTest()
         {
             string n = "John";
             string ad = "101 1st Street";
@@ -108,7 +108,7 @@ namespace TestProject1
             string nu = "123-4567";
             Person target = new Person(n, ad, s, z, nu); // TODO: Initialize to an appropriate value
             string p = "987-6543";
-            target.setNumber(p);
+            target.SetNumber(p);
             Assert.AreEqual(target.num, p);
         }
 
@@ -116,7 +116,7 @@ namespace TestProject1
         ///A test for setName
         ///</summary>
         [TestMethod()]
-        public void setNameTest()
+        public void SetNameTest()
         {
             string n = "John";
             string ad = "101 1st Street";
@@ -125,15 +125,15 @@ namespace TestProject1
             string nu = "123-4567";
             Person target = new Person(n, ad, s, z, nu); // TODO: Initialize to an appropriate value
             string p = "Jonathon Doe";// TODO: Initialize to an appropriate value
-            target.setName(p);
+            target.SetName(p);
             Assert.AreEqual(target.name,p);
         }
 
         /// <summary>
-        ///A test for setAddress
+        ///A test for SetAddress
         ///</summary>
         [TestMethod()]
-        public void setAddressTest()
+        public void SetAddressTest()
         {
             string n = "John Doe";
             string ad = "101 1st Street";
@@ -142,7 +142,7 @@ namespace TestProject1
             string nu = "123-4567";
             Person target = new Person(n, ad, s, z, nu); // TODO: Initialize to an appropriate value
             string p = "404 Not Found Blvd";// TODO: Initialize to an appropriate value
-            target.setAddress(p);
+            target.SetAddress(p);
             Assert.AreEqual(target.addr,p);
         }
 

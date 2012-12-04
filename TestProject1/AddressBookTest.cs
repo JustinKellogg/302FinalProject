@@ -79,7 +79,7 @@ namespace TestProject1
         ///A test for addUser
         ///</summary>
         [TestMethod()]
-        public void addUserTest()
+        public void AddUserTest()
         {
             AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value
             string n = "John";
@@ -89,7 +89,7 @@ namespace TestProject1
             string nu = "123-4567";
             Person User = new Person(n, ad, s, z, nu);           
 
-            target.addUser(User);
+            target.AddUser(User);
             Assert.IsTrue(target.Users.Contains(User));
             Assert.AreEqual(target.Users.Count, 1);
             Assert.AreEqual(target.Users[0].name, n);
@@ -97,7 +97,7 @@ namespace TestProject1
             Assert.AreEqual(target.Users[0].state, s);
             Assert.AreEqual(target.Users[0].zip, z);
             Assert.AreEqual(target.Users[0].num, nu);
-            target.addUser(User);
+            target.AddUser(User);
             Assert.AreEqual(target.Users.Count, 2);
 
         }
@@ -105,7 +105,7 @@ namespace TestProject1
         ///A test for editUser
         ///</summary>
         [TestMethod()]
-        public void editUserTest()
+        public void EditUserTest()
         {
             AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value
             string n = "John";
@@ -121,8 +121,8 @@ namespace TestProject1
             string newZ = "012345";
             string newNu = "321-7654";
 
-            target.addUser(User);
-            target.editUser(User,newN,newAd,newS,newZ,newNu);
+            target.AddUser(User);
+            target.EditUser(User,newN,newAd,newS,newZ,newNu);
 
             Assert.AreEqual(target.Users[0].name, newN);
             Assert.AreEqual(target.Users[0].addr, newAd);
@@ -135,7 +135,7 @@ namespace TestProject1
         ///A test for removeUser
         ///</summary>
         [TestMethod()]
-        public void removeUserTest()
+        public void RemoveUserTest()
         {
             AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value
             string n = "John";
@@ -144,11 +144,11 @@ namespace TestProject1
             string z = "123456";
             string nu = "123-4567";
             Person User = new Person(n, ad, s, z, nu);
-            target.addUser(User);
+            target.AddUser(User);
 
             Assert.AreEqual(target.Users.Count, 1);
             Assert.IsTrue(target.Users.Contains(User));
-            target.removeUser(User);
+            target.RemoveUser(User);
             Assert.AreEqual(target.Users.Count, 0);
             Assert.IsFalse(target.Users.Contains(User));
         }
@@ -157,7 +157,7 @@ namespace TestProject1
         ///A test for sortByZip
         ///</summary>
         [TestMethod()]
-        public void sortByZipTest()
+        public void SortByZipTest()
         {
             string n = "John";
             string ad = "101 1st Street";
@@ -173,10 +173,10 @@ namespace TestProject1
             Person User = new Person(n, ad, s, z, nu);
             Person User2 = new Person(n2, ad2, s2, z2, nu2);
             AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value        
-            target.addUser(User);
-            target.addUser(User2);
+            target.AddUser(User);
+            target.AddUser(User2);
 
-            target.sortByZip();
+            target.SortByZip();
             Assert.AreEqual(target.Users[0].zip, "012345");
             Assert.AreEqual(target.Users[1].zip, "123456");
             Assert.AreEqual(target.Users[1].name, "John");
@@ -187,7 +187,7 @@ namespace TestProject1
         ///A test for sortByName
         ///</summary>
         [TestMethod()]
-        public void sortByNameTest()
+        public void SortByNameTest()
         {
             string n = "John";
             string ad = "101 1st Street";
@@ -203,10 +203,10 @@ namespace TestProject1
             Person User = new Person(n, ad, s, z, nu);
             Person User2 = new Person(n2, ad2, s2, z2, nu2);
             AddressBook target = new AddressBook(); // TODO: Initialize to an appropriate value        
-            target.addUser(User2);
-            target.addUser(User);
+            target.AddUser(User2);
+            target.AddUser(User);
 
-            target.sortByName();
+            target.SortByName();
             Assert.AreEqual(target.Users[0].name,"John");
             Assert.AreEqual(target.Users[1].name,"Zach");
             Assert.AreEqual(target.Users[1].zip,"012345");

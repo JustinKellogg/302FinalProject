@@ -10,11 +10,11 @@
             <RowDefinition Height="46*" />
             <RowDefinition Height="288*" />
         </Grid.RowDefinitions>
-        <Button Content="Add Contanct" Height="30" Name="AddPerson" Margin="335,5,0,11" Click="AddPerson_Click" HorizontalAlignment="Left" Width="100" />
-        <Button Content="Remove Contanct" Height="30" Name="RemovePerson" Margin="0,5,32,11" Click="RemovePerson_Click" HorizontalAlignment="Right" Width="118" />
+        <Button Content="Add Contanct" Height="30" Name="AddPerson" Margin="335,5,0,11" Click="AddPersonClick" HorizontalAlignment="Left" Width="100" />
+        <Button Content="Remove Contanct" Height="30" Name="RemovePerson" Margin="0,5,32,11" Click="RemovePersonClick" HorizontalAlignment="Right" Width="118" />
         <GroupBox Grid.Row="1" Header="People" Height="283" HorizontalAlignment="Left" Margin="12,10,0,0" Name="groupBox1" VerticalAlignment="Top" Width="194">
             <Grid>
-                <ListView Height="248" HorizontalAlignment="Left" Margin="6,6,0,0" Name="listView1" VerticalAlignment="Top" Width="170" SelectionChanged="listView1_SelectionChanged" />
+                <ListView Height="248" HorizontalAlignment="Left" Margin="6,6,0,0" Name="listView1" VerticalAlignment="Top" Width="170" SelectionChanged="ListView1SelectionChanged" />
             </Grid>
         </GroupBox>
         <GroupBox Grid.Row="1" Header="Information" Height="271" HorizontalAlignment="Left" Margin="212,16,0,0" Name="groupBox2" VerticalAlignment="Top" Width="500">
@@ -44,13 +44,13 @@
                 <TextBox AcceptsReturn="True" Height="26" Grid.Row ="5" Grid.Column="1" HorizontalAlignment="Left" Margin="7,10,0,0" Name="textBox6" Text="Enter Data here" VerticalAlignment="Top" Width="319" />
             </Grid>
         </GroupBox>
-        <Button Content="Sort By Zip" Height="30" HorizontalAlignment="Left" Margin="12,5,0,0" Name="button1" VerticalAlignment="Top" Width="89" Click="button1_Click_1" />
-        <Button Content="Sory By Name" Height="30" HorizontalAlignment="Left" Margin="117,5,0,0" Name="button2" VerticalAlignment="Top" Width="89" Click="button2_Click_1" />
+        <Button Content="Sort By Zip" Height="30" HorizontalAlignment="Left" Margin="12,5,0,0" Name="button1" VerticalAlignment="Top" Width="89" Click="Button1Click1" />
+        <Button Content="Sory By Name" Height="30" HorizontalAlignment="Left" Margin="117,5,0,0" Name="button2" VerticalAlignment="Top" Width="89" Click="Button2Click1" />
         <TabControl Grid.RowSpan="2" Height="100" HorizontalAlignment="Left" Margin="778,17,0,0" Name="tabControl1" VerticalAlignment="Top" Width="200">
             <TabItem Header="tabItem1" Name="tabItem1">
                 <Grid />
             </TabItem>
         </TabControl>
-        <Button Content="Edit Contact" Height="30" HorizontalAlignment="Left" Margin="465,5,0,0" Name="button3" VerticalAlignment="Top" Width="101" Click="button3_Click" />
+        <Button Content="Edit Contact" Height="30" HorizontalAlignment="Left" Margin="465,5,0,0" Name="button3" VerticalAlignment="Top" Width="101" Click="Button3Click" />
     </Grid>
 </Window>

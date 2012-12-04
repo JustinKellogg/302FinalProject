@@ -5,6 +5,7 @@ using System.Text;
 
 namespace _302FinalProject
 {
+    //Person class holds all information on a person in address book
     class Person
     {
         public string name,addr,state,zip,num;
@@ -16,27 +17,33 @@ namespace _302FinalProject
             zip = z;
             num = nu;
         }
-        internal void setName(string p)
+        
+        //Sets Name
+        public void SetName(string p)
         {
             name = p;
         }
 
-        internal void setAddress(string p)
+        //Sets Address
+        public void SetAddress(string p)
         {
             addr = p;
         }
 
-        internal void setState(string p)
+        //Sets State
+        public void SetState(string p)
         {
             state = p;
         }
 
-        internal void setZip(string p)
+        //Sets Zip
+        public void SetZip(string p)
         {
            zip = p;
         }
 
-        internal void setNumber(string p)
+        //Sets Number
+        public void SetNumber(string p)
         {
            num = p;
         }

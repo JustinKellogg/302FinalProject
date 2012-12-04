@@ -23,12 +23,15 @@ namespace _302FinalProject
         List<Person> Users = new List<Person>();
         AddressBook book = new AddressBook();
         Person User = new Person("Jane Doe", "001 Main Street", "MO", "11111", "456-7890");
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void AddPerson_Click(object sender, RoutedEventArgs e)
+        //Adds a Person to the address book, attributes read from text boxes. 
+        //Updates listview, clears text from text boxes. 
+        private void AddPersonClick(object sender, RoutedEventArgs e)
         {
             listView1.Items.Clear();
             string name = inputText.Text;
@@ -39,12 +42,11 @@ namespace _302FinalProject
             Person newUser = new Person(name, addr, state, zip, num); 
             
             Users.Add(newUser); 
-            book.addUser(newUser);
+            book.AddUser(newUser);
            foreach (Person User in book.Users)
             {
                 listView1.Items.Add(User.name);
             }
-
            
             inputText.Text="";
             textBox2.Text="";
@@ -53,7 +55,8 @@ namespace _302FinalProject
             textBox5.Text="";
         }
 
-        private void RemovePerson_Click(object sender, RoutedEventArgs e)
+        //Removes Person currently selected in list view. 
+        private void RemovePersonClick(object sender, RoutedEventArgs e)
         {
             if (book.Users.Count()>0 && listView1.SelectedIndex>=0)
             {
@@ -67,7 +70,9 @@ namespace _302FinalProject
             }
         }
 
-        private void button3_Click(object sender, RoutedEventArgs e)
+        //Edits a Person's attributes, new attributes read from text boxes. 
+        //Updates listview, clears text boxes. 
+        private void Button3Click(object sender, RoutedEventArgs e)
         {
             if (book.Users.Count() > 0 && listView1.SelectedIndex >=0)
             {
@@ -76,7 +81,7 @@ namespace _302FinalProject
                 string newSt = textBox3.Text;
                 string newZip = textBox4.Text;
                 string newNum = textBox5.Text;
-                book.editUser(book.Users[listView1.SelectedIndex], newName, newAddr, newSt, newZip, newNum);
+                book.EditUser(book.Users[listView1.SelectedIndex], newName, newAddr, newSt, newZip, newNum);
                 inputText.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
@@ -85,29 +90,33 @@ namespace _302FinalProject
             }
         }
 
-        private void button2_Click_1(object sender, RoutedEventArgs e)
+        //Sorts users by name in both the AddressBooks list, and in listview. 
+        private void Button2Click1(object sender, RoutedEventArgs e)
         {
             listView1.Items.Clear();
             List<Person> temp = new List<Person>(book.Users);
-            
+            book.SortByName();
             foreach (Person User in temp.OrderBy(x=>x.name).ToList())
             {
                 listView1.Items.Add(User.name);
             }
         }
 
-        private void button1_Click_1(object sender, RoutedEventArgs e)
+        //Sorts users by name in both the AddressBooks list, and in listview. 
+        //Also shows each Person's Zip to right of name in listview. 
+        private void Button1Click1(object sender, RoutedEventArgs e)
         {
             listView1.Items.Clear();
             List<Person> temp = new List<Person>(book.Users);
-            
+            book.SortByZip();
             foreach (Person User in temp.OrderBy(x=>x.zip).ToList())
             {
                 listView1.Items.Add(User.name+"          "+User.zip);
             }            
         }
 
-        private void listView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //When a Person is selected in list view, displays their current information in text boxes. 
+        private void ListView1SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (book.Users.Count() > 0 && listView1.SelectedIndex >= 0)
             {
