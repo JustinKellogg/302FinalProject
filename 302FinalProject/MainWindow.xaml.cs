@@ -69,7 +69,7 @@ namespace _302FinalProject
 
         //Edits a Person's attributes, new attributes read from text boxes. 
         //Updates listview, clears text boxes. 
-        private void Button3Click(object sender, RoutedEventArgs e)
+        private void EditPersonClick(object sender, RoutedEventArgs e)
         {
             if (book.Users.Count() > 0 && listView1.SelectedIndex >=0)
             {
@@ -88,7 +88,7 @@ namespace _302FinalProject
         }
 
         //Sorts users by name in both the AddressBooks list, and in listview. 
-        private void Button2Click1(object sender, RoutedEventArgs e)
+        private void SortByNamClick(object sender, RoutedEventArgs e)
         {
             listView1.Items.Clear();
             book.SortByName();
@@ -100,7 +100,7 @@ namespace _302FinalProject
 
         //Sorts users by name in both the AddressBooks list, and in listview. 
         //Also shows each Person's Zip to right of name in listview. 
-        private void Button1Click1(object sender, RoutedEventArgs e)
+        private void SortByZipClick(object sender, RoutedEventArgs e)
         {
             listView1.Items.Clear();
             book.SortByZip();
